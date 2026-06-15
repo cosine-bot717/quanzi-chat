@@ -101,7 +101,7 @@
     flex-direction:column;
   }
   .tab-panel.is-active{ display:flex; }
-  #tab-circle{ background: var(--misty-1); }
+  #tab-circle{ background: #F4F6FA; }
   #tab-profile{ background: #F4F6FA; }
 
   /* ===== 通用图标 ===== */
@@ -146,7 +146,7 @@
     <div class="main-content">
 <style>
   /* ====================================================== */
-  /* ============ 圈子 Tab（雾霾蓝）======================== */
+  /* ============ 圈子 Tab（index-13 高保真复刻）=========== */
   /* ====================================================== */
   .tc-scroll{
     flex:1; min-height:0;
@@ -155,217 +155,92 @@
   }
   .tc-scroll::-webkit-scrollbar{ display:none; }
 
-  /* ---- Hero 区 ---- */
-  .tc-hero{
-    position:relative;
-    padding: 18px 16px 22px;
-    background:
-      radial-gradient(120% 90% at 100% 0%, rgba(255,255,255,.55) 0%, rgba(255,255,255,0) 55%),
-      linear-gradient(165deg, var(--misty-1) 0%, var(--misty-3) 100%);
-    overflow:hidden;
-  }
-  .tc-hero::after{
-    content:"";
-    position:absolute; right:-40px; top:-50px;
-    width:160px; height:160px; border-radius:50%;
-    background: radial-gradient(circle, rgba(199,152,79,.16) 0%, rgba(199,152,79,0) 70%);
-  }
-  .tc-hero__top{
-    display:flex; align-items:flex-start; gap:12px; position:relative; z-index:1;
-  }
-  .tc-hero__avatar{
-    width:48px; height:48px; border-radius:14px;
-    flex-shrink:0;
-    background: linear-gradient(135deg, #2B3A55 0%, #4A5C82 100%);
-    display:flex; align-items:center; justify-content:center;
-    color:#F4D9A6; font-size:18px; font-weight:700;
-    box-shadow: 0 6px 16px rgba(43,58,85,.25);
-  }
-  .tc-hero__info{ flex:1; min-width:0; }
-  .tc-hero__title{
-    font-size:17px; font-weight:700; color:var(--ink);
-    display:flex; align-items:center; gap:6px; line-height:1.3;
-  }
-  .tc-hero__badge{
-    font-size:10px; font-weight:700; color:#fff;
-    background: linear-gradient(135deg, #D9B26A 0%, #B8854A 100%);
-    border-radius:5px; padding:1px 5px; letter-spacing:.5px;
-  }
-  .tc-hero__sub{
-    margin-top:4px; font-size:12px; color: var(--ink-soft); line-height:1.5;
-  }
-  .tc-hero__rank{
-    flex-shrink:0;
-    display:flex; align-items:center; gap:2px;
-    font-size:12px; color:var(--brand-gold);
-    background: var(--brand-gold-soft);
-    border-radius:999px;
-    padding:6px 10px;
-    cursor:pointer;
-    white-space:nowrap;
-  }
-  .tc-hero__rank .icon{ width:14px; height:14px; }
-  .tc-hero__rank .icon.chev{ width:13px; height:13px; margin-left:1px; }
+  /* ---- Hero：沉浸式深蓝背景 ---- */
+  .tc-hero{ background: linear-gradient(160deg, #6C829D 0%, #4B6382 100%); padding: 48px 16px 36px; position: relative; }
+  .tc-hero-header{ display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; }
+  .tc-hero-cover{ width: 60px; height: 60px; border-radius: 12px; background: #E8F1FF; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; color: #4B6382; font-weight: 800; font-size: 15px; text-align: center; line-height: 1.2; }
+  .tc-hero-info{ flex: 1; color: #FFFFFF; }
+  .tc-hero-title{ font-size: 17px; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.2px; }
+  .tc-hero-desc{ font-size: 11px; color: rgba(255,255,255,0.7); line-height: 1.45; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
-  .tc-hero__stats{
-    margin-top:18px;
-    display:flex; align-items:center;
-    background: rgba(255,255,255,.55);
-    border: 1px solid rgba(255,255,255,.6);
-    border-radius: var(--radius-md);
-    padding: 12px 8px;
-    position:relative; z-index:1;
-    backdrop-filter: blur(6px);
-  }
-  .tc-hero__stat{
-    flex:1; text-align:center;
-    display:flex; flex-direction:column; gap:3px;
-  }
-  .tc-hero__stat b{ font-size:17px; font-weight:700; color:var(--ink); }
-  .tc-hero__stat span{ font-size:11px; color:var(--ink-mute); }
-  .tc-hero__divider{ width:1px; height:24px; background: var(--line-soft); }
+  .tc-hero-stats{ display: flex; align-items: center; gap: 10px; font-size: 11px; color: rgba(255,255,255,0.85); margin-bottom: 16px; }
+  .tc-hero-stats-divider{ width: 1px; height: 10px; background: rgba(255,255,255,0.3); }
+  .tc-avatar-stack{ position: relative; width: 44px; height: 18px; margin-right: 4px; }
+  .tc-mini-av{ position: absolute; width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,0.4); font-size: 8px; font-weight: 700; color: #fff; display: flex; align-items: center; justify-content: center; }
+
+  .tc-hero-notices{ background: rgba(255,255,255,0.12); border-radius: 8px; padding: 10px 12px; margin-bottom: 16px; }
+  .tc-notice-item{ display: flex; align-items: center; gap: 8px; font-size: 11px; color: rgba(255,255,255,0.95); margin-bottom: 8px; }
+  .tc-notice-item:last-child{ margin-bottom: 0; }
+  .tc-notice-icon{ background: rgba(255,255,255,0.25); width: 14px; height: 14px; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 9px; flex-shrink:0; }
+  .tc-notice-icon .icon{ width:9px; height:9px; color:#fff; }
+
+  .tc-task-pill{ margin: 0 auto; display: table; background: rgba(0,0,0,0.2); color: #FFF; font-size: 11px; font-weight: 500; padding: 4px 14px; border-radius: 99px; }
+
+  /* ---- Overlap：白色圆角上浮区域 ---- */
+  .tc-overlap{ background: #FFFFFF; border-radius: 20px 20px 0 0; margin-top: -24px; position: relative; z-index: 2; padding-bottom: 24px; min-height: 500px; }
 
   /* ---- 中间菜单栏 ---- */
-  .tc-menu{
-    margin: -14px 12px 0;
-    position:relative; z-index:2;
-    background: var(--card-bg);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-card);
-    display:flex;
-    padding: 14px 4px;
-  }
-  .tc-menu__item{
-    flex:1;
-    display:flex; flex-direction:column; align-items:center; gap:6px;
-    cursor:pointer; user-select:none;
-  }
-  .tc-menu__icon{
-    width:38px; height:38px; border-radius:12px;
-    display:flex; align-items:center; justify-content:center;
-    color:#fff;
-  }
-  .tc-menu__icon .icon{ width:19px; height:19px; }
-  .tc-menu__icon--course{ background: linear-gradient(135deg,#6FA8FF,#3D7BFF); }
-  .tc-menu__icon--member{ background: linear-gradient(135deg,#7ED9B5,#1FBE7A); }
-  .tc-menu__icon--chat{ background: linear-gradient(135deg,#FFB17E,#FF8A4C); }
-  .tc-menu__icon--more{ background: linear-gradient(135deg,#B6A6FF,#8C72F2); }
-  .tc-menu__icon--mine{ background: linear-gradient(135deg,#FFD58A,#E0A23C); }
-  .tc-menu__item span{ font-size:11.5px; color: var(--ink-soft); }
+  .tc-menu{ display: flex; padding: 18px 8px 14px; border-bottom: 1px solid #F0F2F7; }
+  .tc-menu-item{ flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; cursor: pointer; }
+  .tc-menu-icon{ width: 34px; height: 34px; border-radius: 50%; background: #F4F6FA; display: flex; align-items: center; justify-content: center; color: #555; transition: background 150ms; }
+  .tc-menu-icon .icon{ width: 17px; height: 17px; }
+  .tc-menu-item.active .tc-menu-icon{ background: #4B6382; color: #FFF; box-shadow: 0 4px 12px rgba(75,99,130,0.3); }
+  .tc-menu-item.active .tc-menu-label{ color: #4B6382; font-weight: 700; }
+  .tc-menu-label{ font-size: 11px; color: #888; }
 
-  /* ---- 群聊入口卡片 ---- */
-  .tc-group-card{
-    margin: 12px 12px 0;
-    background: var(--card-bg);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-card);
-    padding: 14px;
-    display:flex; align-items:center; gap:12px;
-  }
-  .tc-group-card__icon{
-    width:44px; height:44px; border-radius: var(--radius-md);
-    flex-shrink:0;
-    background: linear-gradient(135deg,#FFB17E,#FF8A4C);
-    display:flex; align-items:center; justify-content:center;
-    color:#fff;
-  }
-  .tc-group-card__icon .icon{ width:22px; height:22px; }
-  .tc-group-card__info{ flex:1; min-width:0; }
-  .tc-group-card__title{
-    font-size:14px; font-weight:600; color:var(--ink);
-    display:flex; align-items:center; gap:6px;
-  }
-  .tc-group-card__live{
-    font-size:10px; color:#fff; background: var(--danger);
-    border-radius:4px; padding:1px 5px; font-weight:600;
-    display:inline-flex; align-items:center; gap:3px;
-  }
-  .tc-group-card__live::before{
-    content:""; width:5px; height:5px; border-radius:50%;
-    background:#fff; display:inline-block;
-  }
-  .tc-group-card__desc{
-    margin-top:4px; font-size:12px; color: var(--ink-mute);
-    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
-  }
-  .tc-group-card__btn{
-    flex-shrink:0;
-    border:none; cursor:pointer;
-    background: var(--brand-blue);
-    color:#fff; font-size:13px; font-weight:600;
-    border-radius:999px;
-    padding:8px 18px;
-  }
-  .tc-group-card__btn:active{ opacity:.85; }
+  /* ---- 群聊入口 ---- */
+  .tc-group-sec{ padding: 18px 16px; border-bottom: 8px solid #F4F6FA; }
+  .tc-group-title{ font-size: 14px; font-weight: 700; color: #1A1A1A; margin-bottom: 12px; }
+  .tc-group-card{ background: #FFFFFF; border: 1px solid #E8ECF4; border-radius: 12px; padding: 14px; display: flex; align-items: center; gap: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.03); }
+  .tc-group-av{ width: 42px; height: 42px; border-radius: 10px; background: linear-gradient(135deg,#6C829D,#4B6382); display: flex; align-items: center; justify-content: center; color: #FFF; flex-shrink: 0; }
+  .tc-group-av .icon{ width: 22px; height: 22px; }
+  .tc-group-info{ flex: 1; min-width: 0; }
+  .tc-group-name{ font-size: 14px; font-weight: 700; color: #1A1A1A; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
+  .tc-group-desc{ font-size: 11px; color: #888; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .tc-group-btn{ background: #4B6382; color: #FFF; border: none; border-radius: 99px; padding: 6px 16px; font-size: 12px; font-weight: 600; cursor: pointer; flex-shrink: 0; }
+  .tc-group-btn:active{ opacity: .85; }
+  .tc-group-tip{ background: #F0F4FA; color: #4B6382; font-size: 11px; padding: 8px; border-radius: 6px; text-align: center; margin-top: 14px; display: flex; align-items: center; justify-content: center; gap: 4px; font-weight: 500; }
+
+  /* "直播中" 标记（保留原有逻辑） */
+  .tc-group-card__live{ font-size:10px; color:#fff; background: var(--danger); border-radius:4px; padding:1px 5px; font-weight:600; display:inline-flex; align-items:center; gap:3px; }
+  .tc-group-card__live::before{ content:""; width:5px; height:5px; border-radius:50%; background:#fff; display:inline-block; }
+
+  /* ---- 帖子分类 Tabs ---- */
+  .tc-post-tabs{ display: flex; align-items: center; gap: 20px; padding: 14px 16px 0; border-bottom: 1px solid #F0F2F7; overflow-x: auto; white-space: nowrap; }
+  .tc-post-tabs::-webkit-scrollbar{ display: none; }
+  .tc-ptab{ font-size: 14px; color: #666; padding-bottom: 10px; cursor: pointer; }
+  .tc-ptab.active{ font-size: 15px; font-weight: 700; color: #1A1A1A; position: relative; }
+  .tc-ptab.active::after{ content:''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 20px; height: 3px; background: #4B6382; border-radius: 2px; }
 
   /* ---- 帖子流 ---- */
-  .tc-feed{ padding: 16px 12px 24px; }
-  .tc-feed__title{
-    font-size:14px; font-weight:700; color:var(--ink);
-    margin: 4px 4px 10px;
-    display:flex; align-items:center; gap:6px;
-  }
-  .tc-feed__title::before{
-    content:""; width:3px; height:13px; border-radius:2px;
-    background: var(--brand-blue); display:inline-block;
-  }
-  .tc-post{
-    background: var(--card-bg);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-card);
-    padding: 14px;
-    margin-bottom: 10px;
-  }
-  .tc-post__head{ display:flex; align-items:center; gap:10px; }
-  .tc-post__avatar{
-    width:38px; height:38px; border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    color:#fff; font-size:14px; font-weight:700; flex-shrink:0;
-  }
-  .tc-post__meta{ flex:1; min-width:0; }
-  .tc-post__name{
-    font-size:13.5px; font-weight:600; color:var(--ink);
-    display:flex; align-items:center; gap:6px;
-  }
-  .tc-post__tag{
-    font-size:10px; color: var(--brand-blue);
-    background: var(--brand-blue-soft);
-    border-radius:4px; padding:1px 5px; font-weight:600;
-  }
-  .tc-post__time{ margin-top:2px; font-size:11px; color: var(--ink-mute); }
-  .tc-post__content{
-    margin-top:10px; font-size:13.5px; line-height:1.7; color:#3A3F4B;
-    white-space:pre-line;
-  }
-  .tc-post__images{
-    margin-top:10px; display:grid; grid-template-columns:repeat(3,1fr); gap:6px;
-  }
-  .tc-post__images--two{ grid-template-columns:repeat(2,1fr); }
-  .tc-post__images--two .tc-post__img{ height:84px; }
-  .tc-post__img{
-    height:72px; border-radius:8px;
-    display:flex; align-items:center; justify-content:center;
-    color:rgba(255,255,255,.85); font-size:11px; font-weight:600;
-  }
-  .tc-post__list{
-    margin-top:10px; background: var(--misty-1); border-radius:10px;
-    padding: 10px 12px; display:flex; flex-direction:column; gap:7px;
-  }
-  .tc-post__list-item{
-    font-size:12.5px; color:#3A3F4B; display:flex; gap:8px; line-height:1.5;
-  }
-  .tc-post__list-item b{ color: var(--brand-blue); font-weight:600; flex-shrink:0; }
-  .tc-post__footer{
-    margin-top:12px; padding-top:10px; border-top:1px solid var(--line-soft);
-    display:flex; align-items:center; gap:22px;
-  }
-  .tc-post__action{
-    display:flex; align-items:center; gap:5px;
-    font-size:12px; color:var(--ink-mute); cursor:pointer; user-select:none;
-  }
-  .tc-post__action .icon{ width:16px; height:16px; }
-  .tc-post__action.is-liked{ color:var(--danger); }
-  .tc-post__action.is-liked .icon{ fill:var(--danger); stroke:var(--danger); }
+  .tc-posts{ padding: 0 16px; }
+  .tc-post{ padding: 18px 0; border-bottom: 1px solid #F0F2F7; }
+  .tc-posts .tc-post:last-child{ border-bottom: none; padding-bottom: 0; }
+  .tc-post-head{ display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
+  .tc-post-av{ width: 38px; height: 38px; border-radius: 50%; background: #E8F1FF; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; flex-shrink: 0; color: #4B6382; }
+  .tc-post-user{ flex: 1; min-width: 0; }
+  .tc-post-name{ font-size: 14px; font-weight: 700; color: #1A1A1A; display: flex; align-items: center; gap: 6px; }
+  .tc-post-badge{ font-size: 9px; color: #D97706; background: #FEF3C7; padding: 2px 6px; border-radius: 4px; font-weight: 600; }
+  .tc-post-time{ font-size: 11px; color: #999; margin-top: 3px; }
+  .tc-post-text{ font-size: 14px; color: #333; line-height: 1.6; margin-bottom: 10px; white-space: pre-line; }
+  .tc-post-tags{ display: flex; gap: 8px; margin-bottom: 10px; }
+  .tc-post-tag{ font-size: 12px; color: #1677FF; font-weight: 500; }
+  .tc-post-action{ font-size: 13px; color: #1677FF; display: inline-flex; align-items: center; gap: 2px; font-weight: 500; cursor: pointer; margin-bottom: 10px; }
+  .tc-post-action .icon{ width: 13px; height: 13px; }
+
+  /* ---- 帖子配图 / 清单 / 互动栏（保留原有信息流内容与点赞交互） ---- */
+  .tc-post-images{ display: grid; grid-template-columns: repeat(3,1fr); gap: 6px; margin-bottom: 10px; }
+  .tc-post-images--two{ grid-template-columns: repeat(2,1fr); }
+  .tc-post-images--two .tc-post-img{ height: 84px; }
+  .tc-post-img{ height: 72px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.85); font-size: 11px; font-weight: 600; }
+  .tc-post-list{ background: #F4F6FA; border-radius: 10px; padding: 10px 12px; display: flex; flex-direction: column; gap: 7px; margin-bottom: 10px; }
+  .tc-post-list-item{ font-size: 12.5px; color: #3A3F4B; display: flex; gap: 8px; line-height: 1.5; }
+  .tc-post-list-item b{ color: #4B6382; font-weight: 600; flex-shrink: 0; }
+  .tc-post-foot{ display: flex; align-items: center; gap: 22px; }
+  .tc-post-stat{ display: flex; align-items: center; gap: 5px; font-size: 12px; color: #999; cursor: pointer; user-select: none; }
+  .tc-post-stat .icon{ width: 16px; height: 16px; }
+  .tc-post-stat.is-liked{ color: var(--danger); }
+  .tc-post-stat.is-liked .icon{ fill: var(--danger); stroke: var(--danger); }
 </style>
 <style>
   /* ====================================================== */
@@ -707,150 +582,183 @@
 <div id="tab-circle" class="tab-panel is-active">
   <div class="tc-scroll">
 
-    <!-- Hero 区 -->
+    <!-- 沉浸式深蓝 Hero 区域 -->
     <div class="tc-hero">
-      <div class="tc-hero__top">
-        <div class="tc-hero__avatar">财</div>
-        <div class="tc-hero__info">
-          <div class="tc-hero__title">财富进阶交流圈 <span class="tc-hero__badge">PRO</span></div>
-          <div class="tc-hero__sub">链接价值投资者 · 共享一线认知红利</div>
-        </div>
-        <div class="tc-hero__rank">
-          <svg class="icon chev"><use href="#icon-trophy"/></svg>
-          排行榜
-          <svg class="icon chev"><use href="#icon-chevron-right"/></svg>
+      <div class="tc-hero-header">
+        <div class="tc-hero-cover">财富<br/>进阶</div>
+        <div class="tc-hero-info">
+          <div class="tc-hero-title">财富进阶交流圈</div>
+          <div class="tc-hero-desc">链接价值投资者，共享一线认知红利，与名师一起记录学习心得、分享行业洞察与实战交易经验...</div>
         </div>
       </div>
-      <div class="tc-hero__stats">
-        <div class="tc-hero__stat"><b>1.79w</b><span>圈子动态</span></div>
-        <div class="tc-hero__divider"></div>
-        <div class="tc-hero__stat"><b>3,286</b><span>圈内成员</span></div>
-        <div class="tc-hero__divider"></div>
-        <div class="tc-hero__stat"><b>128</b><span>本周新增</span></div>
+      <div class="tc-hero-stats">
+        <span>1.79w 动态</span>
+        <div class="tc-hero-stats-divider"></div>
+        <span>3,286 成员</span>
+        <div style="flex:1;"></div>
+        <div class="tc-avatar-stack">
+          <div class="tc-mini-av" style="background:#4F46E5;left:0;z-index:3;">陈</div>
+          <div class="tc-mini-av" style="background:#059669;left:12px;z-index:2;">投</div>
+          <div class="tc-mini-av" style="background:#D97706;left:24px;z-index:1;">阿</div>
+        </div>
+        <span>排行榜 &rsaquo;</span>
       </div>
+      <div class="tc-hero-notices">
+        <div class="tc-notice-item">
+          <div class="tc-notice-icon"><svg class="icon"><use href="#icon-megaphone"/></svg></div>
+          <span>陈牧老师：本周《宏观周期与资产配置周报》已更新</span>
+        </div>
+        <div class="tc-notice-item">
+          <div class="tc-notice-icon"><svg class="icon"><use href="#icon-trophy"/></svg></div>
+          <span>本周学习打卡排行榜已刷新，快去看看你的排名吧</span>
+        </div>
+      </div>
+      <div class="tc-task-pill">本周新增 128 位圈友 &rsaquo;</div>
     </div>
 
-    <!-- 中间菜单栏：课程 / 成员 / 群聊 / 更多 / 我的 -->
-    <div class="tc-menu">
-      <div class="tc-menu__item" data-toast="即将打开「课程」列表">
-        <div class="tc-menu__icon tc-menu__icon--course"><svg class="icon"><use href="#icon-book"/></svg></div>
-        <span>课程</span>
-      </div>
-      <div class="tc-menu__item" data-toast="即将打开「成员」列表">
-        <div class="tc-menu__icon tc-menu__icon--member"><svg class="icon"><use href="#icon-users"/></svg></div>
-        <span>成员</span>
-      </div>
-      <div class="tc-menu__item" id="menu-group-chat-btn">
-        <div class="tc-menu__icon tc-menu__icon--chat"><svg class="icon"><use href="#icon-chat"/></svg></div>
-        <span>群聊</span>
-      </div>
-      <div class="tc-menu__item" data-toast="更多功能敬请期待">
-        <div class="tc-menu__icon tc-menu__icon--more"><svg class="icon"><use href="#icon-grid"/></svg></div>
-        <span>更多</span>
-      </div>
-      <div class="tc-menu__item" data-goto-tab="profile">
-        <div class="tc-menu__icon tc-menu__icon--mine"><svg class="icon"><use href="#icon-user"/></svg></div>
-        <span>我的</span>
-      </div>
-    </div>
+    <!-- 白色圆角上浮区域 -->
+    <div class="tc-overlap">
 
-    <!-- 群聊入口卡片 -->
-    <div class="tc-group-card">
-      <div class="tc-group-card__icon"><svg class="icon"><use href="#icon-chat"/></svg></div>
-      <div class="tc-group-card__info">
-        <div class="tc-group-card__title">内部交流群 <span class="tc-group-card__live">直播中</span></div>
-        <div class="tc-group-card__desc">1.2w 人在线 · 陈牧老师正在解读今日盘面</div>
+      <!-- 中间菜单栏：课程 / 成员 / 群聊 / 更多 / 我的 -->
+      <div class="tc-menu">
+        <div class="tc-menu-item" data-toast="即将打开「课程」列表">
+          <div class="tc-menu-icon"><svg class="icon"><use href="#icon-book"/></svg></div>
+          <div class="tc-menu-label">课程</div>
+        </div>
+        <div class="tc-menu-item" data-toast="即将打开「成员」列表">
+          <div class="tc-menu-icon"><svg class="icon"><use href="#icon-users"/></svg></div>
+          <div class="tc-menu-label">成员</div>
+        </div>
+        <div class="tc-menu-item" id="menu-group-chat-btn">
+          <div class="tc-menu-icon"><svg class="icon"><use href="#icon-chat"/></svg></div>
+          <div class="tc-menu-label">群聊</div>
+        </div>
+        <div class="tc-menu-item" data-toast="更多功能敬请期待">
+          <div class="tc-menu-icon"><svg class="icon"><use href="#icon-grid"/></svg></div>
+          <div class="tc-menu-label">更多</div>
+        </div>
+        <div class="tc-menu-item" data-goto-tab="profile">
+          <div class="tc-menu-icon"><svg class="icon"><use href="#icon-user"/></svg></div>
+          <div class="tc-menu-label">我的</div>
+        </div>
       </div>
-      <button class="tc-group-card__btn" id="enter-group-chat-btn">进入</button>
-    </div>
 
-    <!-- 帖子流 -->
-    <div class="tc-feed">
-      <div class="tc-feed__title">圈子动态</div>
+      <!-- 群聊入口 -->
+      <div class="tc-group-sec">
+        <div class="tc-group-title">圈内群聊</div>
+        <div class="tc-group-card">
+          <div class="tc-group-av"><svg class="icon"><use href="#icon-chat"/></svg></div>
+          <div class="tc-group-info">
+            <div class="tc-group-name">内部交流群 <span class="tc-group-card__live">直播中</span></div>
+            <div class="tc-group-desc">1.2w 人在线 · 陈牧老师正在解读今日盘面</div>
+          </div>
+          <button class="tc-group-btn" id="enter-group-chat-btn">进入</button>
+        </div>
+      </div>
 
-      <!-- 帖子 1：导师 · 行情解读 + 配图 -->
-      <div class="tc-post">
-        <div class="tc-post__head">
-          <div class="tc-post__avatar" style="background:linear-gradient(135deg,#5C6E94,#2B3A55)">陈</div>
-          <div class="tc-post__meta">
-            <div class="tc-post__name">陈牧 <span class="tc-post__tag">指导老师</span></div>
-            <div class="tc-post__time">10分钟前 · 财富进阶交流圈</div>
+      <!-- 帖子分类 -->
+      <div class="tc-post-tabs">
+        <div class="tc-ptab active">推荐</div>
+        <div class="tc-ptab">最新</div>
+        <div class="tc-ptab">精华</div>
+        <div class="tc-ptab">问答</div>
+      </div>
+
+      <!-- 帖子流 -->
+      <div class="tc-posts">
+
+        <!-- 帖子 1：导师 · 行情解读 + 配图 -->
+        <div class="tc-post">
+          <div class="tc-post-head">
+            <div class="tc-post-av">陈</div>
+            <div class="tc-post-user">
+              <div class="tc-post-name">陈牧 <span class="tc-post-badge">指导老师</span></div>
+              <div class="tc-post-time">10分钟前 · 财富进阶交流圈</div>
+            </div>
+          </div>
+          <div class="tc-post-text">今日大盘缩量震荡，北向资金小幅净流入。短期关注两条主线：一是高股息板块的防御配置价值；二是政策预期带动的科技成长方向。建议控制仓位，逢低分批，不追高。</div>
+          <div class="tc-post-tags">
+            <span class="tc-post-tag">#市场复盘</span>
+            <span class="tc-post-tag">#板块轮动</span>
+          </div>
+          <div class="tc-post-images">
+            <div class="tc-post-img" style="background:linear-gradient(135deg,#7EA8FF,#3D7BFF)">沪深300走势</div>
+            <div class="tc-post-img" style="background:linear-gradient(135deg,#7ED9B5,#1FBE7A)">行业资金流向</div>
+            <div class="tc-post-img" style="background:linear-gradient(135deg,#FFC98A,#E0A23C)">板块热力图</div>
+          </div>
+          <div class="tc-post-foot">
+            <div class="tc-post-stat" data-like><svg class="icon"><use href="#icon-heart"/></svg><span>286</span></div>
+            <div class="tc-post-stat"><svg class="icon"><use href="#icon-comment"/></svg><span>42</span></div>
+            <div class="tc-post-stat"><svg class="icon"><use href="#icon-share"/></svg><span>转发</span></div>
           </div>
         </div>
-        <div class="tc-post__content">今日大盘缩量震荡，北向资金小幅净流入。短期关注两条主线：一是高股息板块的防御配置价值；二是政策预期带动的科技成长方向。建议控制仓位，逢低分批，不追高。</div>
-        <div class="tc-post__images">
-          <div class="tc-post__img" style="background:linear-gradient(135deg,#7EA8FF,#3D7BFF)">沪深300走势</div>
-          <div class="tc-post__img" style="background:linear-gradient(135deg,#7ED9B5,#1FBE7A)">行业资金流向</div>
-          <div class="tc-post__img" style="background:linear-gradient(135deg,#FFC98A,#E0A23C)">板块热力图</div>
-        </div>
-        <div class="tc-post__footer">
-          <div class="tc-post__action" data-like><svg class="icon"><use href="#icon-heart"/></svg><span>286</span></div>
-          <div class="tc-post__action"><svg class="icon"><use href="#icon-comment"/></svg><span>42</span></div>
-          <div class="tc-post__action"><svg class="icon"><use href="#icon-share"/></svg><span>转发</span></div>
-        </div>
-      </div>
 
-      <!-- 帖子 2：投研助理 · 本周关注清单 -->
-      <div class="tc-post">
-        <div class="tc-post__head">
-          <div class="tc-post__avatar" style="background:linear-gradient(135deg,#A493FF,#6F58D6)">投</div>
-          <div class="tc-post__meta">
-            <div class="tc-post__name">投研助理 <span class="tc-post__tag">官方</span></div>
-            <div class="tc-post__time">1小时前 · 财富进阶交流圈</div>
+        <!-- 帖子 2：投研助理 · 本周关注清单 -->
+        <div class="tc-post">
+          <div class="tc-post-head">
+            <div class="tc-post-av">投</div>
+            <div class="tc-post-user">
+              <div class="tc-post-name">投研助理 <span class="tc-post-badge">官方</span></div>
+              <div class="tc-post-time">1小时前 · 财富进阶交流圈</div>
+            </div>
+          </div>
+          <div class="tc-post-text">本周市场日历已更新，建议提前关注以下时间节点，合理安排操作节奏：</div>
+          <div class="tc-post-list">
+            <div class="tc-post-list-item"><b>周三</b>国内CPI、PPI数据公布，关注通胀预期变化</div>
+            <div class="tc-post-list-item"><b>周四</b>美联储利率决议公布，警惕外盘波动外溢</div>
+            <div class="tc-post-list-item"><b>周五</b>A股两市半年报集中披露，关注业绩预告兑现情况</div>
+          </div>
+          <div class="tc-post-action" data-toast="即将打开完整版市场日历">
+            查看完整日历 <svg class="icon"><use href="#icon-chevron-right"/></svg>
+          </div>
+          <div class="tc-post-foot">
+            <div class="tc-post-stat" data-like><svg class="icon"><use href="#icon-heart"/></svg><span>153</span></div>
+            <div class="tc-post-stat"><svg class="icon"><use href="#icon-comment"/></svg><span>28</span></div>
+            <div class="tc-post-stat"><svg class="icon"><use href="#icon-share"/></svg><span>转发</span></div>
           </div>
         </div>
-        <div class="tc-post__content">本周市场日历已更新，建议提前关注以下时间节点，合理安排操作节奏：</div>
-        <div class="tc-post__list">
-          <div class="tc-post__list-item"><b>周三</b>国内CPI、PPI数据公布，关注通胀预期变化</div>
-          <div class="tc-post__list-item"><b>周四</b>美联储利率决议公布，警惕外盘波动外溢</div>
-          <div class="tc-post__list-item"><b>周五</b>A股两市半年报集中披露，关注业绩预告兑现情况</div>
-        </div>
-        <div class="tc-post__footer">
-          <div class="tc-post__action" data-like><svg class="icon"><use href="#icon-heart"/></svg><span>153</span></div>
-          <div class="tc-post__action"><svg class="icon"><use href="#icon-comment"/></svg><span>28</span></div>
-          <div class="tc-post__action"><svg class="icon"><use href="#icon-share"/></svg><span>转发</span></div>
-        </div>
-      </div>
 
-      <!-- 帖子 3：普通成员 · 学习心得 -->
-      <div class="tc-post">
-        <div class="tc-post__head">
-          <div class="tc-post__avatar" style="background:linear-gradient(135deg,#FFA3B5,#FF6F91)">L</div>
-          <div class="tc-post__meta">
-            <div class="tc-post__name">Linda</div>
-            <div class="tc-post__time">3小时前 · 财富进阶交流圈</div>
+        <!-- 帖子 3：普通成员 · 学习心得 -->
+        <div class="tc-post">
+          <div class="tc-post-head">
+            <div class="tc-post-av">L</div>
+            <div class="tc-post-user">
+              <div class="tc-post-name">Linda</div>
+              <div class="tc-post-time">3小时前 · 财富进阶交流圈</div>
+            </div>
+          </div>
+          <div class="tc-post-text">刚把《宏观周期与资产配置周报》看完，对"股债性价比"这一段印象很深——原来可以用这么简单的指标判断当前估值水位。打卡第86天，继续加油！</div>
+          <div class="tc-post-foot">
+            <div class="tc-post-stat is-liked" data-like><svg class="icon"><use href="#icon-heart"/></svg><span>97</span></div>
+            <div class="tc-post-stat"><svg class="icon"><use href="#icon-comment"/></svg><span>15</span></div>
+            <div class="tc-post-stat"><svg class="icon"><use href="#icon-share"/></svg><span>转发</span></div>
           </div>
         </div>
-        <div class="tc-post__content">刚把《宏观周期与资产配置周报》看完，对"股债性价比"这一段印象很深——原来可以用这么简单的指标判断当前估值水位。打卡第86天，继续加油！</div>
-        <div class="tc-post__footer">
-          <div class="tc-post__action is-liked" data-like><svg class="icon"><use href="#icon-heart"/></svg><span>97</span></div>
-          <div class="tc-post__action"><svg class="icon"><use href="#icon-comment"/></svg><span>15</span></div>
-          <div class="tc-post__action"><svg class="icon"><use href="#icon-share"/></svg><span>转发</span></div>
-        </div>
-      </div>
 
-      <!-- 帖子 4：普通成员 · 线下沙龙 + 配图 -->
-      <div class="tc-post">
-        <div class="tc-post__head">
-          <div class="tc-post__avatar" style="background:linear-gradient(135deg,#6FE0D6,#2BA9A1)">阿</div>
-          <div class="tc-post__meta">
-            <div class="tc-post__name">阿城</div>
-            <div class="tc-post__time">昨天 · 财富进阶交流圈</div>
+        <!-- 帖子 4：普通成员 · 线下沙龙 + 配图 -->
+        <div class="tc-post">
+          <div class="tc-post-head">
+            <div class="tc-post-av">阿</div>
+            <div class="tc-post-user">
+              <div class="tc-post-name">阿城</div>
+              <div class="tc-post-time">昨天 · 财富进阶交流圈</div>
+            </div>
+          </div>
+          <div class="tc-post-text">周末参加了线下沙龙，和几位圈友交流了基金定投的心得，干货满满，感谢主理人安排！</div>
+          <div class="tc-post-images tc-post-images--two">
+            <div class="tc-post-img" style="background:linear-gradient(135deg,#FFC98A,#FF8A4C)">沙龙现场</div>
+            <div class="tc-post-img" style="background:linear-gradient(135deg,#9FB8FF,#5C6E94)">圈友合影</div>
+          </div>
+          <div class="tc-post-foot">
+            <div class="tc-post-stat" data-like><svg class="icon"><use href="#icon-heart"/></svg><span>64</span></div>
+            <div class="tc-post-stat"><svg class="icon"><use href="#icon-comment"/></svg><span>9</span></div>
+            <div class="tc-post-stat"><svg class="icon"><use href="#icon-share"/></svg><span>转发</span></div>
           </div>
         </div>
-        <div class="tc-post__content">周末参加了线下沙龙，和几位圈友交流了基金定投的心得，干货满满，感谢主理人安排！</div>
-        <div class="tc-post__images tc-post__images--two">
-          <div class="tc-post__img" style="background:linear-gradient(135deg,#FFC98A,#FF8A4C)">沙龙现场</div>
-          <div class="tc-post__img" style="background:linear-gradient(135deg,#9FB8FF,#5C6E94)">圈友合影</div>
-        </div>
-        <div class="tc-post__footer">
-          <div class="tc-post__action" data-like><svg class="icon"><use href="#icon-heart"/></svg><span>64</span></div>
-          <div class="tc-post__action"><svg class="icon"><use href="#icon-comment"/></svg><span>9</span></div>
-          <div class="tc-post__action"><svg class="icon"><use href="#icon-share"/></svg><span>转发</span></div>
-        </div>
-      </div>
 
-    </div><!-- /tc-feed -->
+      </div><!-- /tc-posts -->
+
+    </div><!-- /tc-overlap -->
   </div><!-- /tc-scroll -->
 </div><!-- /tab-circle -->
 
